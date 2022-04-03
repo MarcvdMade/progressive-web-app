@@ -12,7 +12,7 @@ export default class Tag {
 
         let button = document.createElement('button');
         button.innerHTML = this.tag.name;
-        addTailwind(['px-2', 'py-1', 'rounded-xl', 'bg-red-600', 'text-white', 'hover:bg-red-500'], button);
+        addTailwind(['px-2', 'py-1', 'rounded-xl', 'bg-hrRed', 'text-white', 'hover:bg-red-500'], button);
 
         link.appendChild(button);
 

@@ -66,7 +66,7 @@ async function renderProjects() {
 
         // Tags
         let tagDiv = document.createElement('div');
-        addTailwind(['flex', 'flex-row', 'gap-2', 'mt-2'], tagDiv)
+        addTailwind(['flex', 'flex-row', 'gap-2', 'mt-2', 'flex-wrap'], tagDiv)
 
         project.project.tags.forEach((tag) => {
             let button = document.createElement('button');

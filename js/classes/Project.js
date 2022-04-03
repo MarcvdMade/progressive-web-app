@@ -1,5 +1,7 @@
 import { addTailwind } from "../scripts/mixins.js";
 
+import Tag from './Tag.js';
+
 export default class Project {
     constructor(project, div) {
         this.project = project;
@@ -13,9 +15,7 @@ export default class Project {
 
         // Create the card for a project
         let projectCard = document.createElement('div');
-
-        // Used for appending tailwind css classes (thx js)
-        addTailwind(['flex', 'flex-col', 'justify-between', 'border-solid', 'border-4', 'border-black', 'bg-white', 'dark:bg-black', 'rounded-xl', 'w-96', 'dark:border-red-600', 'hover:drop-shadow-2xl', 'hover:-translate-y-5', 'transition', 'duration-200'], projectCard);
+        addTailwind(['flex', 'flex-col', 'justify-between', 'border-solid', 'border-4', 'border-black', 'bg-white', 'dark:bg-black', 'rounded-xl', 'w-96', 'min-h-[30rem]', 'dark:border-red-600', 'hover:drop-shadow-2xl', 'hover:-translate-y-5', 'transition', 'duration-200'], projectCard);
 
         // Get project details and append them to card
 
@@ -47,10 +47,8 @@ export default class Project {
         addTailwind(['flex', 'flex-row', 'gap-2', 'mt-2', 'flex-wrap', 'p-5'], tagDiv)
 
         this.project.project.tags.forEach((tag) => {
-            let button = document.createElement('button');
-            button.innerHTML = tag.name;
-            addTailwind(['px-2', 'py-1', 'rounded-xl', 'bg-red-600', 'text-white', 'hover:bg-red-500'], button);
-            tagDiv.appendChild(button);
+            let tagItem = new Tag(tag, tagDiv);
+            tagItem.create();
         });
 
 

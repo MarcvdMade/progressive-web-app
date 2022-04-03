@@ -7,9 +7,15 @@ export default class Tag {
     }
 
     create() {
+        let link = document.createElement('a');
+        link.href = `https://cmgt.hr.nl/tag/${((this.tag.name).replace(/\s/g, '-')).toLowerCase()}`
+
         let button = document.createElement('button');
         button.innerHTML = this.tag.name;
         addTailwind(['px-2', 'py-1', 'rounded-xl', 'bg-red-600', 'text-white', 'hover:bg-red-500'], button);
-        this.div.appendChild(button);
+
+        link.appendChild(button);
+
+        this.div.appendChild(link);
     }
 }

@@ -7,6 +7,10 @@ export default class Project {
     }
 
     create() {
+        // Create link around card
+        let cardLink = document.createElement('a');
+        cardLink.href = `https://cmgt.hr.nl/project/${((this.project.project.title).replace(/\s/g, '-')).toLowerCase()}`
+
         // Create the card for a project
         let projectCard = document.createElement('div');
 
@@ -55,6 +59,8 @@ export default class Project {
         projectCard.appendChild(infoDiv);
         projectCard.appendChild(tagDiv);
 
-        this.div.appendChild(projectCard);
+        cardLink.appendChild(projectCard);
+
+        this.div.appendChild(cardLink);
     }
 }

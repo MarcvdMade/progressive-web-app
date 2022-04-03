@@ -37,7 +37,7 @@ async function renderProjects() {
         let projectCard = document.createElement('div');
 
         // Used for appending tailwind css classes (thx js)
-        addTailwind(['border-solid', 'border-4', 'border-black', 'bg-white', 'dark:bg-black', 'rounded-xl', 'w-96', 'dark:border-red-600', 'hover:drop-shadow-2xl', 'hover:-translate-y-5', 'transition', 'duration-200'], projectCard);
+        addTailwind(['flex', 'flex-col', 'justify-between', 'border-solid', 'border-4', 'border-black', 'bg-white', 'dark:bg-black', 'rounded-xl', 'w-96', 'dark:border-red-600', 'hover:drop-shadow-2xl', 'hover:-translate-y-5', 'transition', 'duration-200'], projectCard);
 
         // Get project details and append them to card
 
@@ -66,7 +66,7 @@ async function renderProjects() {
 
         // Tags
         let tagDiv = document.createElement('div');
-        addTailwind(['flex', 'flex-row', 'gap-2', 'mt-2', 'flex-wrap'], tagDiv)
+        addTailwind(['flex', 'flex-row', 'gap-2', 'mt-2', 'flex-wrap', 'p-5'], tagDiv)
 
         project.project.tags.forEach((tag) => {
             let button = document.createElement('button');
@@ -74,14 +74,14 @@ async function renderProjects() {
             addTailwind(['px-2', 'py-1', 'rounded-xl', 'bg-red-600', 'text-white', 'hover:bg-red-500'], button);
             tagDiv.appendChild(button);
         });
-        infoDiv.appendChild(tagDiv)
-
-
+        
+        
         // Elements in project cards
-        projectCard.appendChild(img)
+        projectCard.appendChild(img);
         projectCard.appendChild(infoDiv);
+        projectCard.appendChild(tagDiv);
 
-        projectsHolder.appendChild(projectCard)
+        projectsHolder.appendChild(projectCard);
     });
 }
 

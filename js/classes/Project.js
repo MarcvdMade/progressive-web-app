@@ -28,7 +28,7 @@ export default class Project {
 
         // Text holder
         let infoDiv = document.createElement('div');
-        addTailwind(['p-5'], infoDiv);
+        addTailwind(['px-5'], infoDiv);
 
         // Title
         let title = document.createElement('p');
@@ -44,7 +44,7 @@ export default class Project {
 
         // Tags
         let tagDiv = document.createElement('div');
-        addTailwind(['flex', 'flex-row', 'gap-2', 'mt-2', 'flex-wrap', 'p-5'], tagDiv)
+        addTailwind(['flex', 'flex-row', 'gap-2', 'mt-2', 'flex-wrap', 'px-5', 'pb-5'], tagDiv)
 
         this.project.project.tags.forEach((tag) => {
             let tagItem = new Tag(tag, tagDiv);

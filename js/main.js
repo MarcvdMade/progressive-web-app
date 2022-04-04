@@ -31,7 +31,6 @@ async function getProjects() {
 
 async function renderProjects() {
     let projects = await getProjects();
-    console.log(projects)
     let projectsHolder = document.getElementById('projects-holder');
     projectsHolder.innerHTML = '';
 
@@ -58,7 +57,6 @@ async function getTags() {
 
 async function renderTags() {
     let tags = await getTags();
-    console.log(tags)
     let tagsHolder = document.getElementById('tags-holder');
     tagsHolder.innerHTML = '';
 

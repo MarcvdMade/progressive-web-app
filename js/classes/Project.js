@@ -15,7 +15,7 @@ export default class Project {
 
         // Create the card for a project
         let projectCard = document.createElement('div');
-        addTailwind(['flex', 'flex-col', 'justify-between', 'border-solid', 'border-4', 'border-black', 'bg-white', 'dark:bg-black', 'rounded-xl', 'w-96', 'min-h-[30rem]', 'dark:border-hrRed', 'hover:drop-shadow-2xl', 'hover:scale-110', 'transition', 'duration-200'], projectCard);
+        addTailwind(['flex', 'flex-col', 'justify-between', 'border-solid', 'border-4', 'border-black', 'bg-white', 'dark:bg-black', 'rounded-xl', 'w-[23rem]', 'min-h-[30rem]', 'dark:border-hrRed', 'hover:drop-shadow-2xl', 'hover:scale-110', 'transition', 'duration-200'], projectCard);
 
         // Get project details and append them to card
 

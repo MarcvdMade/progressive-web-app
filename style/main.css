@@ -7,8 +7,7 @@
 html, body {
     margin: 0;
     padding: 0;
-    background-color: var(--white);
-    font-family: 'Montserrat';
+    font-family: 'Montserrat', sans-serif;
     transition: 200ms all;
 }
 
@@ -23,7 +22,8 @@ html, body {
 }
 
 .dark .project-card {
-    border: solid 4px var(--hr);
+    /* border: solid 4px var(--hr); */
+    background: #181818;
 }
 
 header {
@@ -39,11 +39,11 @@ header {
 }
 
 .header-title {
-    font-size: 2.25rem; /* 36px */
+    font-size: 2.5rem; /* 36px */
     line-height: 2.5rem;
     font-weight: bold;
     text-align: center;
-    padding-bottom: 2px;
+    padding-bottom: 10px;
     border-bottom: 4px solid var(--hr);
 }
 
@@ -66,16 +66,22 @@ header {
 }
 
 .button {
+    font-weight: bold;
+    text-transform: capitalize;
     min-width: 4rem;
     background-color: var(--hr);
     margin-top: 5px;
     border: none;
-    border-radius: 10px;
+    border-radius: 20px;
     color: var(--white);
-    padding: 5px;
+    padding: 8px;
+    cursor: pointer;
+    z-index: 10;
+    transition: 200ms all;
 }
 .button:hover {
-    background-color: red;
+    background-color: #d12751;
+    transform: scale(1.1);
 }
 
 #tags {
@@ -98,7 +104,7 @@ header {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 5px;
+    gap: 10px;
     margin: 0 auto;
 }
 
@@ -118,7 +124,7 @@ header {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 30px;
+    gap: 40px;
     margin: 0 5px;
 }
 
@@ -131,9 +137,8 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: solid var(--black) 4px;
+    background-color: white;
     border-radius: 10px;
-    background-color: inherit;
     width: 25rem;
     min-height: 30rem;
     color: inherit;
@@ -141,6 +146,7 @@ header {
 }
 .project-card:hover {
     transform: scale(1.1);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
 .project-card-img {
@@ -168,9 +174,8 @@ header {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 5px;
-    margin-top: 5px;
-    padding: 0 5px 5px 5px;
+    gap: 8px;
+    padding: 8px;
 }
 
 .footer-wrapper {

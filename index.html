@@ -1,29 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="light">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PWA | Cool projects</title>
 
-    <!-- Animate.style -->
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👌</text></svg>">
+
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
-
-    <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👌</text></svg>">
-
-    <!-- Localforage -->
-    <script src="localforage/dist/localforage.js"></script>
 
     <!-- Style -->
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link rel="stylesheet" href="style/main.css">
 
 </head>
-<body class="light">
+<body>
     <div>
         <header id="header">
             <div class="header-wrapper">
@@ -67,6 +63,7 @@
 <!-- ServiceWorker -->
 <script src="js/serviceWorker.js"></script>
 
+<!-- Register ServiceWorker -->
 <script>
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('/js/serviceWorker.js').then((registration) => {
@@ -82,16 +79,28 @@
 <script type="module" src="js/classes/Tag.js"></script>
 <script type="module" src="js/main.js"></script>
 
+<!-- Handle light/dark mode -->
 <script>
-    let htmlTag = document.getElementsByTagName('body')[0];
+    let htmlTag = document.getElementsByTagName('html')[0];
+    let mode = localStorage.getItem('mode')
+    console.log(mode)
+
+    if (mode) {
+        htmlTag.classList.add(mode)
+    } else {
+        localStorage.setItem('mode', 'light');
+        htmlTag.classList.add('light');
+    }
     
     let button = document.getElementById('mode-switch').addEventListener('click', () => {
         if (htmlTag.classList.contains('dark')) {
             htmlTag.classList.remove('dark');
             htmlTag.classList.add('light');
+            localStorage.setItem('mode', 'light');
         } else {
             htmlTag.classList.remove('light');
             htmlTag.classList.add('dark');
+            localStorage.setItem('mode', 'dark');
         }
     })
 </script>

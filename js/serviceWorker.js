@@ -1,4 +1,4 @@
-const cacheName = 'shell-content';
+const cacheName = 'content';
 const filesToCache = [
     '/index.html',
     '/style/main.css',
@@ -14,3 +14,15 @@ self.addEventListener('install', (e) => {
         })
     );
 });
+
+self.addEventListener('activate', (event) => {
+    const allowList = [cacheName];
+
+    event.waitUntil(caches.keys().then((keys) => {
+        return Promise.all(keys.map((key) => {
+            if (!allowList.includes(key)) {
+                return caches.delete(key);
+            }
+        }))
+    }))
+})

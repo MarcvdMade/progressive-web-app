@@ -1,6 +1,6 @@
 // Classes
-import Project from './classes/Project.js';
-import Tag from './classes/Tag.js';
+import Project from './Project.js';
+import Tag from './Tag.js';
 
 let fetchAllUrl = 'https://cmgt.hr.nl/api/projects';
 let fetchUrl = fetchAllUrl;
